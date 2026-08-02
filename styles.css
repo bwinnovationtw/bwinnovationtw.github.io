@@ -317,7 +317,7 @@ h3 {
 
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -339,6 +339,15 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.app-card-media.portrait {
+  background: #050505;
+}
+
+.app-card-media.portrait img {
+  object-fit: contain;
+  object-position: top center;
 }
 
 .app-card-body {
@@ -413,6 +422,12 @@ h3 {
   opacity: 0.68;
 }
 
+.product-shot.portrait {
+  top: 82px;
+  right: max(42px, calc((100vw - 1040px) / 2));
+  width: min(28vw, 320px);
+}
+
 .product-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.05fr);
@@ -479,8 +494,31 @@ h3 {
   padding: clamp(54px, 8vw, 92px) 0;
 }
 
+.policy-app-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.policy-app-name::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--muted);
+}
+
 .policy-document h1 {
   font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+.policy-date {
+  margin-bottom: 44px;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .policy-document h2 {
@@ -588,6 +626,11 @@ h3 {
     opacity: 0.28;
     width: 78vw;
     right: -18vw;
+  }
+
+  .product-shot.portrait {
+    width: 46vw;
+    right: -4vw;
   }
 
   .home-shot.two {
