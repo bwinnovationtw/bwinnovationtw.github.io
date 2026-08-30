@@ -136,6 +136,97 @@ a:hover {
   max-width: 720px;
 }
 
+.splash-showcase {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: clamp(42px, 7vw, 72px);
+}
+
+.splash-app {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid rgba(247, 244, 236, 0.18);
+  border-radius: 8px;
+  background: rgba(32, 32, 27, 0.86);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+}
+
+.splash-app-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 1px solid rgba(247, 244, 236, 0.12);
+  border-radius: 8px;
+  background: #080806;
+}
+
+.splash-app-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splash-app-media.portrait {
+  background: #050505;
+}
+
+.splash-app-media.portrait img {
+  object-fit: contain;
+  object-position: top center;
+}
+
+.splash-app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.splash-app-header img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+}
+
+.splash-app-header h2 {
+  margin-bottom: 4px;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.08;
+}
+
+.splash-app-header p {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.splash-app > p {
+  color: var(--muted);
+}
+
+.splash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.splash-actions .button {
+  min-height: 42px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -453,6 +544,28 @@ h3 {
   margin-top: 34px;
 }
 
+.demo-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(320px, 1.18fr);
+  gap: clamp(30px, 5vw, 70px);
+  align-items: center;
+}
+
+.demo-video-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #050505;
+  box-shadow: var(--shadow);
+}
+
+.demo-video-frame video {
+  display: block;
+  width: 100%;
+  max-height: min(720px, 76svh);
+  background: #050505;
+}
+
 .screenshot-card {
   overflow: hidden;
   margin: 0;
@@ -668,9 +781,11 @@ h3 {
   }
 
   .split,
+  .splash-showcase,
   .app-grid,
   .feature-grid,
   .screenshot-grid,
+  .demo-layout,
   .product-layout,
   .privacy-summary,
   .support-panel {
