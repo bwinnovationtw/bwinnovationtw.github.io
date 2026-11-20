@@ -77,7 +77,14 @@
   line-height: 1.05;
 }
 
+.keys-hero h1 {
+  font-size: 3.55rem;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
 .keys-tagline {
+  max-width: 54ch;
   margin: 0 auto 14px;
   color: var(--muted);
   font-size: 1.18rem;
@@ -175,6 +182,26 @@
   font-size: 0.85rem;
 }
 
+.keys-mode-gallery,
+.keys-plus-previews {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.keys-mode-gallery {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.024fr) minmax(0, 2.071fr);
+}
+
+.keys-mode-gallery a {
+  display: block;
+  border-radius: 8px;
+}
+
+.keys-plus-previews {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .keys-layout {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
@@ -242,11 +269,6 @@
   margin-top: 4px;
 }
 
-.keys-emoji {
-  max-width: 630px;
-  margin-bottom: 32px;
-}
-
 .keys-pricing {
   border-top: 1px solid var(--line);
   padding-top: 22px;
@@ -284,6 +306,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0 20px;
+}
+
+.keys-jump {
+  column-gap: 16px;
 }
 
 .keys-document {
@@ -330,6 +356,24 @@
   padding-inline-start: 1.45em;
 }
 
+.keys-setup-steps li + li {
+  margin-top: 12px;
+}
+
+.keys-faq details + details {
+  border-top: 1px solid var(--line);
+}
+
+.keys-faq summary {
+  padding-block: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.keys-faq details p {
+  margin-bottom: 12px;
+}
+
 .keys-document .keys-breadcrumb {
   margin-bottom: 8px;
   font-size: 0.95rem;
@@ -359,6 +403,14 @@
 }
 
 @media (max-width: 700px) {
+  .keys-mode-gallery {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.024fr);
+  }
+
+  .keys-mode-gallery > :last-child {
+    grid-column: 1 / -1;
+  }
+
   .keys-layout {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -386,6 +438,10 @@
     font-size: 3rem;
   }
 
+  .keys-hero h1 {
+    font-size: 2.35rem;
+  }
+
   .keys-document h1 {
     font-size: 2.45rem;
   }
@@ -408,7 +464,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .keys-comparison {
+  .keys-comparison,
+  .keys-plus-previews {
     grid-template-columns: 1fr;
     gap: 22px;
   }
